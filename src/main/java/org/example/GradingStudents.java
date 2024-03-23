@@ -38,16 +38,13 @@ public class GradingStudents {
     private static Integer getRounding(Integer grade){
         if(grade == null || grade > 100) throw new IllegalArgumentException("grade must have a value");
         if(grade < 38) return grade;
-        //calculateRounding
-        //example 67
         int number = 0;
         for(int i=1; i < 3; i++){
             number = grade+i;
-            if(number %5 ==0){
+            if(number %5 ==0)
                 break;
-            } else {
+            else
                 number = 0;
-            }
         }
         return number !=0? number:grade;
     }
